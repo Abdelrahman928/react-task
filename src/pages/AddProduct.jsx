@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Button from "../components/Button";
 import Header from "../components/Header";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import { useState } from "react";
 
 function AddProduct(){
