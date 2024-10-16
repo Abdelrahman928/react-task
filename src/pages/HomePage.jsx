@@ -21,7 +21,7 @@ function HomePage(){
     };
   
     const sendDeleteRequest = () => {
-      axios.delete('http://127.0.0.1:8000/products', { data: { ids: selectedProductIds } })
+      axios.delete('http://http://abdelrahman-task.42web.io/products', { data: { ids: selectedProductIds } })
       .then(response => {
         console.log('Response:', response.data);
         reloadPage();
@@ -40,7 +40,7 @@ function HomePage(){
     }
   
     useEffect(() => {
-      axios.get('http://127.0.0.1:8000/')
+      axios.get('http://http://abdelrahman-task.42web.io/')
         .then(response => {
           if (Array.isArray(response.data.products) && response.data.products.length > 0) {
               setProducts(response.data.products);
