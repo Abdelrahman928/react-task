@@ -87,7 +87,7 @@ function AddProduct(){
             ...specificAttributes
         };
 
-        axios.post('http://abdelrahman-task.42web.io/add-product', productAttributes)
+        axios.post('https://abdelrahman-task.42web.io/add-product', productAttributes)
         .then(response => {
             console.log('Response:', response.data);
             navigate('/');
