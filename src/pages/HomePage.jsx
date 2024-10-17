@@ -40,7 +40,7 @@ function HomePage(){
     }
   
     useEffect(() => {
-      axios.get('https://abdelrahman-task.42web.io/')
+      axios.get('https://abdelrahman-task.42web.io')
         .then(response => {
           if (Array.isArray(response.data.products) && response.data.products.length > 0) {
               setProducts(response.data.products);
