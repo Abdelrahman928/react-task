@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-      {
-        "source": "/api/(.*)",
-        "destination": "https://abdelrahman-task.42web.io/"
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://abdelrahman-task.42web.io/$1"
+    }
+  ]
+}
