@@ -40,38 +40,21 @@ function HomePage(){
     }
   
     useEffect(() => {
-      const fetchProducts = async () => {
-        setLoading(true); // Set loading to true before the request
-        try {
-          const response = await axios.get('https://abdelrahman-task.42web.io/');
-          
-          // Check if the response contains products
+      axios.get('https://abdelrahman-task.42web.io/')
+        .then(response => {
           if (Array.isArray(response.data.products) && response.data.products.length > 0) {
-            setProducts(response.data.products);
-          } else if (response.data.message) {
-            setError(response.data.message);
-          } else {
-            setProducts([]); 
-          }
-        } catch (error) {
-          console.error('Error fetching products:', error); // Log error to console
-          // Check if the error is related to CORS
-          if (error.response) {
-            // The request was made and the server responded with a status code
-            setError(`Server responded with status code ${error.response.status}: ${error.response.data.message || error.message}`);
-          } else if (error.request) {
-            // The request was made but no response was received
-            setError('No response received from server. This could be a CORS issue.');
-          } else {
-            // Something happened in setting up the request
-            setError(`Error in request: ${error.message}`);
-          }
-        } finally {
-          setLoading(false); // Set loading to false after request completes
-        }
-      };
-    
-      fetchProducts();
+              setProducts(response.data.products);
+            } else if (response.data.message) {
+              setError(response.data.message); 
+            } else {
+              setProducts([]); 
+            }
+          setLoading(false);
+        })
+        .catch(error => {
+          setError(error.message);
+          setLoading(false);
+        });
     }, []);
   
     const getAttributeUnit = (type) => {
