@@ -40,7 +40,7 @@ function HomePage(){
     }
   
     useEffect(() => {
-      axios.get('https://task-api.ignorelist.com/', {withCredentials: false})
+      axios.get('https://task-api.ignorelist.com/')
         .then(response => {
           if (Array.isArray(response.data.products) && response.data.products.length > 0) {
               setProducts(response.data.products);
