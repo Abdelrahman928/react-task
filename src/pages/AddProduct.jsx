@@ -110,7 +110,7 @@ function AddProduct(){
     return(
         <>
         <div className= "flex justify-between">
-            <Header className="m-4 text-4xl" text='Product add'/>
+            <Header className="m-4 text-4xl" text='Product Add'/>
             <div>
             <Button onClick={handleSubmit} className= "bg-white border-2 border-blue-700 text-center font-bold text-blue-700 my-4 mx-2 rounded-md p-2 shadow-sm shadow-black hover:bg-blue-700 hover:text-white active:scale-95" text='Save'/>
             <Button id="delete-product-btn" onClick={redirect} className= "bg-white border-2 border-red-700 text-center text-red-700 font-bold my-4 mx-2 p-2 rounded-md  shadow-sm shadow-black hover:bg-red-700 hover:text-white active:scale-95" text='Cancel'/>
