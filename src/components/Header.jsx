@@ -3,7 +3,7 @@
 function Header({text, className}){
     return (
         <header>
-            <h2 className= {className}>{text}</h2>
+            <h1 className= {className}>{text}</h1>
         </header>
     );
 }
