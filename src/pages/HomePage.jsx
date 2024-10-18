@@ -80,7 +80,7 @@ function HomePage(){
     return (
       <>
       <div className= "flex justify-between">
-        <h1 className="m-4 text-4xl" text='Product list'/>
+        <Header className="m-4 text-4xl" text='Product list'/>
         <div>
           <Button onClick={redirect} className= "bg-white border-2 border-blue-700 text-center font-bold text-blue-700 my-4 mx-2 rounded-md p-2 shadow-sm shadow-black hover:bg-blue-700 hover:text-white active:scale-95" text='Add product'/>
           <Button id="delete-product-btn" onClick={sendDeleteRequest} className= {`border-2 text-center font-bold my-4 mx-2 p-2 rounded-md shadow-sm shadow-black ${selectedProductIds.length > 0 ? "bg-white border-red-600 text-red-700 hover:bg-red-600 hover:text-white active:scale-95" : "bg-white text-gray-400 border-gray-400 cursor-not-allowed"
