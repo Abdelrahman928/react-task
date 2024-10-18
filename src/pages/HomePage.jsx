@@ -21,7 +21,7 @@ function HomePage(){
     };
   
     const sendDeleteRequest = () => {
-      axios.delete('https://abdelrahman-task.42web.io/products', { data: { ids: selectedProductIds } })
+      axios.delete('https://task-api.ignorelist.com/products', { data: { ids: selectedProductIds } })
       .then(response => {
         console.log('Response:', response.data);
         reloadPage();
@@ -40,7 +40,7 @@ function HomePage(){
     }
   
     useEffect(() => {
-      axios.get('https://abdelrahman-task.42web.io', {withCredentials: false})
+      axios.get('https://task-api.ignorelist.com/', {withCredentials: false})
         .then(response => {
           if (Array.isArray(response.data.products) && response.data.products.length > 0) {
               setProducts(response.data.products);
