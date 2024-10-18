@@ -61,7 +61,7 @@ function AddProduct(){
         setErrors(updatedErrors);
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         const specificAttributes = (() => {
@@ -87,19 +87,20 @@ function AddProduct(){
             ...specificAttributes
         };
 
-        try {
-            const response = await axios.post('https://task-api.ignorelist.com/add-product', productAttributes);
+        axios.post('https://task-api.ignorelist.com/add-product', productAttributes)
+        .then(response => {
             console.log('Response:', response.data);
             navigate('/');
             setErrors({});
-        } catch (error) {
+          })
+          .catch(error => {
             if (error.response && error.response.data.message) {
                 setErrors(error.response.data.message);
             } else {
                 console.error('Error:', error);
                 setErrors({});
             }
-        }
+          });
     }
 
     const redirect = () => {
