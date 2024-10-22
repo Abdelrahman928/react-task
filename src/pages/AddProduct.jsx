@@ -90,7 +90,7 @@ function AddProduct(){
         try {
             const response = await axios.post('https://task-api.ignorelist.com/add-product', productAttributes);
             console.log('Response:', response.data);
-            navigate('/'); // Navigate to home page after successful save
+            navigate('/');
             setErrors({});
         } catch (error) {
             if (error.response && error.response.data.message) {
