@@ -93,7 +93,7 @@ function HomePage(){
       <div className="grid grid-cols-6 gap-4 p-2">
         {products.map(product =>(
           <div key= {product.id} className= "basis-1/6 relative flex flex-col items-center justify-center p-8 border-2 border-blue-700 rounded-lg shadow-lg">
-            <input type="checkbox" onClick= {() => handleCheckboxChange(product.id)} id={`product-${product.id}`} className="appearance-none bg-white border-2 rounded-full border-white outline-blue-700 checked:bg-blue-700 w-5 h-5 absolute top-2 left-2 cursor-pointer"/>
+            <input type="checkbox" onClick= {() => handleCheckboxChange(product.id)} id={`product-${product.id}`} className="appearance-none bg-white border-8 rounded-full border-white outline checked:bg-blue-700 w-5 h-5 absolute top-2 left-2 cursor-pointer"/>
             <p>{product.sku}</p>
             <p>{product.name}</p>
             <p>{product.price}$</p>
