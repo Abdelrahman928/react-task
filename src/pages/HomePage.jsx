@@ -94,9 +94,9 @@ function HomePage(){
         {products.map(product =>(
           <div key= {product.id} className= "relative flex flex-col items-center justify-center p-8 border-2 border-blue-700 rounded-lg shadow-lg">
             <input type="checkbox" onClick= {() => handleCheckboxChange(product.id)} id={`product-${product.id}`} className="appearance-none bg-white border-2 rounded-full border-white outline outline-blue-700 checked:bg-blue-700 w-5 h-5 absolute top-2 left-2 cursor-pointer"/>
-            <p className="whitespace-normal w-full text-center">{product.sku}</p>
-            <p className="whitespace-normal w-full text-center">{product.name}</p>
-            <p className="whitespace-normal w-full text-center">{product.price}$</p>
+            <p className="break-words whitespace-normal w-full text-center">{product.sku}</p>
+            <p className="break-words whitespace-normal w-full text-center">{product.name}</p>
+            <p className="break-words whitespace-normal w-full text-center">{product.price}$</p>
             {product.specificAttributes && Object.entries(product.specificAttributes).map(([key, value]) => {
                 if (product.type !== 'furniture' || (key !== 'height' && key !== 'width' && key !== 'length')) {
                   return (
@@ -109,7 +109,7 @@ function HomePage(){
               })
             }
             {product.type === 'furniture' && product.specificAttributes && 
-              <p key= {`${product.id}-${product.type}`} className="whitespace-normal w-full text-center">
+              <p key= {`${product.id}-${product.type}`} className="break-words whitespace-normal w-full text-center">
                 ({formatFurnitureDimensions(product.specificAttributes)}) {getAttributeUnit(product.type)}
               </p>
             }
